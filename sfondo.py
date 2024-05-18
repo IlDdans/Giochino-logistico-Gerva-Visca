@@ -1,11 +1,11 @@
 import pygame
 from random import randint
 class Sfondo:
-    def __init__(self, screen, size, pos):
+    def __init__(self, screen, pos,size):
         self.screen=screen
-        self.size=size
         self.pos=pos
+        self.size=size
 
-        self.boscaiolo=pygame.image.load("montagna2.png").convert_alpha()
-        self.rect=self.boscaiolo.get_rect
+        self.sfondo=pygame.image.load("montagna2.png").convert_alpha()
+        self.rect=self.sfondo.get_rect
         self.velocita=[randint(4,8)]
