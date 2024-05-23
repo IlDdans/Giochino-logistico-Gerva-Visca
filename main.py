@@ -1,17 +1,25 @@
 import pygame, sys
 
 pygame.init()
-sfondo=pygame.image.load("foresta.png")
+
 WIDTH, HEIGHT = 600, 600
 screen=pygame.display.set_mode((WIDTH, HEIGHT))
+
+sfondo=pygame.image.load("foresta.png")
+ramo=pygame.image.load("ramo.png").convert_alpha()
 boscaiolo=pygame.image.load("boscaiolo.png").convert_alpha()
+
 larghezzautile=boscaiolo.get_width()
 altezzautile=boscaiolo.get_height()
 boscaiolo = pygame.transform.scale(boscaiolo, (boscaiolo.get_width()*0.3, boscaiolo.get_height() * 0.3))
+
 pygame.display.set_caption("Lumberjack Quandale Deangle")
+
 fps=60
 clock=pygame.time.Clock()
 font=pygame.font.Font(None, 50)
+
+
 while True:
     for event in pygame.event.get():
         if event.type==pygame.QUIT:     
