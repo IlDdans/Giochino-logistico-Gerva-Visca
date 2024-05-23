@@ -1,25 +1,22 @@
 import pygame, sys
-
 pygame.init()
+from lumberjack import Boscaiolo
 
 WIDTH, HEIGHT = 600, 600
 screen=pygame.display.set_mode((WIDTH, HEIGHT))
 
 sfondo=pygame.image.load("foresta.png")
 ramo=pygame.image.load("ramo.png").convert_alpha()
-boscaiolo=pygame.image.load("boscaiolo.png").convert_alpha()
 
-
-boscaiolo = pygame.transform.scale(boscaiolo, (boscaiolo.get_width()*0.3, boscaiolo.get_height() * 0.3))
-larghezzautile=boscaiolo.get_width()
-altezzautile=boscaiolo.get_height()
 
 tronco=pygame.image.load("tronco.jpg").convert_alpha()
-tronco=pygame.transform.scale(tronco, (larghezzautile*0.8, 550))
+tronco=pygame.transform.scale(tronco, (100, 550))
 tronco_rect=tronco.get_rect(midtop=(WIDTH/2, 0))
 
-boscaiolo_rect=boscaiolo.get_rect(bottomright=(tronco_rect.left, 550))
 
+boscaiolo=pygame.image.load("boscaiolo.png").convert_alpha()
+
+boscaiolo=Boscaiolo(screen, 250-boscaiolo.get_width()*0.3, 550-boscaiolo.get_height()*0.3)
 
 
 pygame.display.set_caption("Lumberjack Quandale Deangle")
@@ -35,7 +32,7 @@ while True:
             pygame.quit()           
             sys.exit()
     screen.blit(sfondo, (0,0))
-    screen.blit(boscaiolo, boscaiolo_rect)
+    boscaiolo.draw()
     screen.blit(tronco, tronco_rect)
     clock.tick(fps)
     pygame.display.flip()
