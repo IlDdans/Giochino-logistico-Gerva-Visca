@@ -2,3 +2,5 @@
     # from pygame.locals import *
 # from lumberjack import Boscaiolo
 # boscaiolo=Boscaiolo(screen,[100,480],[10,100])
+
+ci sono, ce l'ho fatta
