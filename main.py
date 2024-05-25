@@ -27,12 +27,22 @@ font=pygame.font.Font(None, 50)
 
 
 while True:
+    screen.blit(sfondo, (0,0))
+    screen.blit(tronco, tronco_rect)
     for event in pygame.event.get():
         if event.type==pygame.QUIT:     
             pygame.quit()           
             sys.exit()
-    screen.blit(sfondo, (0,0))
-    boscaiolo.draw()
-    screen.blit(tronco, tronco_rect)
+        if event.type==pygame.KEYDOWN:
+            if event.key==pygame.K_RIGHT:
+                boscaiolo.drawdestra()
+                pygame.display.flip()
+                screen.blit(sfondo, (0,0))
+                screen.blit(tronco, tronco_rect)
+            if event.key==pygame.K_LEFT:
+                boscaiolo.drawsinistra()
+                pygame.display.flip()
+                screen.blit(sfondo, (0,0))
+                screen.blit(tronco, tronco_rect)
     clock.tick(fps)
-    pygame.display.flip()
+   
