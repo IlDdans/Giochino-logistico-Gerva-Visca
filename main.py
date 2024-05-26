@@ -35,14 +35,10 @@ while True:
             sys.exit()
         if event.type==pygame.KEYDOWN:
             if event.key==pygame.K_RIGHT:
-                boscaiolo.drawdestra()
-                pygame.display.flip()
-                screen.blit(sfondo, (0,0))
-                screen.blit(tronco, tronco_rect)
+                boscaiolo.pos=1
             if event.key==pygame.K_LEFT:
-                boscaiolo.drawsinistra()
-                pygame.display.flip()
-                screen.blit(sfondo, (0,0))
-                screen.blit(tronco, tronco_rect)
+                boscaiolo.pos=0
+    boscaiolo.draw()
     clock.tick(fps)
-   
+    pygame.display.flip()
+    

@@ -15,9 +15,9 @@ class Boscaiolo:
         self.h=self.boscaiolo.get_height()
 
         self.rect=self.boscaiolo.get_rect()
-    def drawsinistra(self):
-        self.screen.blit(self.boscaiolo, (self.x, self.y))
-    def drawdestra(self):
-        self.screen.blit(self.boscaiolodestra, (self.x+250, self.y))
-
+    def draw(self):
+        if self.pos==0:
+            self.screen.blit(self.boscaiolo, (self.x, self.y))
+        else:
+            self.screen.blit(self.boscaiolodestra, (self.x+250, self.y))
         
