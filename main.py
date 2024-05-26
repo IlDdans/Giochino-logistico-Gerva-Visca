@@ -17,6 +17,8 @@ tronco_rect=tronco.get_rect(midtop=(WIDTH/2, 0))
 
 boscaiolo=Boscaiolo(screen)
 
+
+
 supporto=[i for i in range(0,9)]
 stati=[]
 rami=[]
@@ -76,6 +78,7 @@ while True:
                         
                     rami[8]=Ramo(screen, 1, -1)
                 
+                
 
 
             if event.key==pygame.K_LEFT:
@@ -96,7 +99,6 @@ while True:
                         rami[9]=Ramo(screen, 0, -2)
                         
                     rami[8]=Ramo(screen, 1, -1)
-                
             for ramo in rami:
                 print(ramo.stato, end=" ")
             print()
