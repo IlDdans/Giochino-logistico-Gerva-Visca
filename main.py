@@ -9,6 +9,8 @@ screen=pygame.display.set_mode((WIDTH, HEIGHT))
 perso=False
 sfondo=pygame.image.load("foresta.png")
 
+sconfitta=pygame.image.load("perso.png")
+sconfitta=pygame.transform.scale(sconfitta,(600,600))
 
 tronco=pygame.image.load("tronco.jpg").convert_alpha()
 tronco=pygame.transform.scale(tronco, (100, 550))
@@ -45,6 +47,8 @@ for ramo in rami:
     print(ramo.n, end=" ")
 print()
 pygame.display.set_caption("Lumberjack Quandale Deangle")
+icon=pygame.image.load("iconcina.jpg")
+pygame.display.set_icon(icon)
 
 fps=60
 clock=pygame.time.Clock()
@@ -112,7 +116,7 @@ while True:
     for ramo in rami[0:9:]:
         ramo.draw()
     if perso:
-        screen.fill("Yellow")
+        screen.blit(sconfitta,(0,0))
     clock.tick(fps)
     pygame.display.flip()
     
