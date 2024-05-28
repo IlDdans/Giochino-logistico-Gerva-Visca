@@ -53,7 +53,10 @@ def caricamento():
             pygame.time.delay(1200)
             if i==3:
                 stato=False
-
+boscaiolosinistra=pygame.image.load("boscaiolo.png").convert_alpha()
+boscaiolodestra=pygame.image.load("boscaiologirato.png").convert_alpha()
+boscaiolodestra=pygame.transform.scale(boscaiolodestra, (150,150))
+boscaiolosinistra = pygame.transform.scale(boscaiolosinistra, (150,150))
 supporto=[i for i in range(0,9)]
 stati=[]
 rami=[]
@@ -99,6 +102,9 @@ while True:
             sys.exit()
         if event.type==pygame.KEYDOWN:
             if event.key==pygame.K_RIGHT:
+                screen.blit(boscaiolosinistra,(350,400))
+                pygame.time.delay(150)
+                pygame.display.flip()
                 punteggio+=10
                 if boscaiolo.pos==0:
                     boscaiolo.pos=2
@@ -121,6 +127,9 @@ while True:
 
 
             if event.key==pygame.K_LEFT:
+                screen.blit(boscaiolodestra,(100,400))
+                pygame.time.delay(150)
+                pygame.display.flip()
                 punteggio+=10
                 if boscaiolo.pos==2:
                     boscaiolo.pos=0
