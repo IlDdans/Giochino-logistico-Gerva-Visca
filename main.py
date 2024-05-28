@@ -24,13 +24,13 @@ punteggio=0
 
 lista_caricamento=[]
 carcica1=pygame.image.load("22.png")
-carcica1=pygame.transform.scale(carcica1,(carcica1.get_width()*0.1,carcica1.get_height()*0.1))
+carcica1=pygame.transform.scale(carcica1,(carcica1.get_width()*0.2,carcica1.get_height()*0.2))
 carcica2=pygame.image.load("54.png")
-carcica2=pygame.transform.scale(carcica2,(carcica2.get_width()*0.1,carcica2.get_height()*0.1))
+carcica2=pygame.transform.scale(carcica2,(carcica2.get_width()*0.2,carcica2.get_height()*0.2))
 carcica3=pygame.image.load("77.png")
-carcica3=pygame.transform.scale(carcica3,(carcica3.get_width()*0.1,carcica3.get_height()*0.1))
+carcica3=pygame.transform.scale(carcica3,(carcica3.get_width()*0.2,carcica3.get_height()*0.2))
 carcica4=pygame.image.load("100.png")
-carcica4=pygame.transform.scale(carcica4,(carcica4.get_width()*0.11,carcica4.get_height()*0.11))
+carcica4=pygame.transform.scale(carcica4,(carcica4.get_width()*0.21,carcica4.get_height()*0.21))
 
 lista_caricamento.append(carcica1)
 lista_caricamento.append(carcica2)
@@ -48,7 +48,7 @@ def caricamento():
     while stato:
         for i in range(len(lista_caricamento)):
             screen.blit(sfondo1,(0,0))
-            screen.blit(lista_caricamento[i],(250,550))
+            screen.blit(lista_caricamento[i],(250,530))
             pygame.display.update()
             pygame.time.delay(1200)
             if i==3:
