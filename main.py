@@ -128,7 +128,6 @@ while True:
 
             if event.key==pygame.K_LEFT:
                 screen.blit(boscaiolodestra,(100,400))
-                pygame.time.delay(150)
                 pygame.display.flip()
                 punteggio+=10
                 if boscaiolo.pos==2:
