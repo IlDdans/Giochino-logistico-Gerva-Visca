@@ -11,6 +11,7 @@ class Ramo:
             self.x=350
         self.w=150
         self.h=50
+        self.n=n
         self.surf=pygame.image.load("ramo.png").convert_alpha()
         self.surf=pygame.transform.scale(self.surf, (self.w, self.h))
         if self.stato==2:
@@ -18,4 +19,4 @@ class Ramo:
 
     def draw(self):
         if self.stato!=1:
-            self.display.blit(self.surf,(self.x, self.y))
+            self.display.blit(self.surf,(self.x, self.y+50))
