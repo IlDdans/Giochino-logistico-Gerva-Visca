@@ -8,6 +8,7 @@ WIDTH, HEIGHT = 600, 600
 screen=pygame.display.set_mode((WIDTH, HEIGHT))
 
 sfondo=pygame.image.load("foresta.png")
+sfondo=pygame.transform.scale(sfondo, (600,690))
 font=pygame.font.Font(None,30)
 
 sconfitta=pygame.image.load("perso.png")
@@ -62,6 +63,8 @@ def menù(screen):
     sfondomenu=pygame.image.load("menu.jpg")
     sfondomenu=pygame.transform.scale(sfondomenu, (600, 600))
     play=pygame.image.load("tastoplay.png")
+    scritta=pygame.image.load("testomenù.png")
+    scritta=pygame.transform.scale(scritta, (400, 100))
     play=pygame.transform.scale(play, (150,150))
     tasto_rect=pygame.Rect(225, 370, 150, 150)
     run=True
@@ -77,6 +80,7 @@ def menù(screen):
                 gioco(screen)
 
         screen.blit(sfondomenu, (0,0))
+        screen.blit(scritta, (100, 200))
         screen.blit(play, (225, 370))
         pygame.display.flip()
 
@@ -95,7 +99,7 @@ def gioco(screen):
     stati.append(rand([0,2]))
     while len(stati)<10:
         n=rand(supporto)
-        if n<6:
+        if n<4:
             stato=stati[-1]
         else:
             if stati[-1]==0:
