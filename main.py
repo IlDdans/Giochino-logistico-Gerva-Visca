@@ -53,6 +53,30 @@ def caricamento():
             pygame.time.delay(1200)
             if i==3:
                 stato=False
+
+
+def menù(screen):
+    sfondomenu=pygame.image.load("menu.jpg")
+    sfondomenu=pygame.transform.scale(sfondomenu, (600, 600))
+    play=pygame.image.load("tastoplay.png")
+    play=pygame.transform.scale(play, (150,150))
+    tasto_rect=pygame.Rect(225, 370, 150, 150)
+    run=True
+    while run:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+        
+        mouse=pygame.mouse.get_pressed()
+        if mouse[0]:
+            pos=pygame.mouse.get_pos()
+            if tasto_rect.collidepoint(pos):
+                run=False
+
+        screen.blit(sfondomenu, (0,0))
+        screen.blit(play, (225, 370))
+        pygame.display.flip()
+
 boscaiolosinistra=pygame.image.load("boscaiolo.png").convert_alpha()
 boscaiolodestra=pygame.image.load("boscaiologirato.png").convert_alpha()
 boscaiolodestra=pygame.transform.scale(boscaiolodestra, (150,150))
@@ -91,6 +115,7 @@ clock=pygame.time.Clock()
 font=pygame.font.Font(None, 50)
 
 caricamento()
+menù(screen)
 while True:
     
     screen.blit(sfondo, (0,0))
